@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Stock Data</title>
+</head>
+<body>
+
+<form action="{% url 'stock create' %}" method="post">
+    {% csrf_token %}
+    <select name="symbol" id="symbol">
+        <option value="IBM">IBM</option>
+        <option value="RELIANCE.BSE">RELIANCE</option>
+    </select>
+    <button>Create</button>
+</form>
+
+</body>
+</html>

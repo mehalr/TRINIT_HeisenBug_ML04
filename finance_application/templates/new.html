@@ -1,0 +1,48 @@
+{% extends 'front/index.html' %}
+
+{% block stock %}
+<div class="todo">
+					<div class="head">
+						<h3>Stock Prediction</h3>
+						<i class='bx bx-plus' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+					<form method="POST" action="{% url 'stock create' %}">
+                        {% csrf_token %}
+						<label  class="form-label">Select Stock</label>
+					<div class="mb-3">
+						<select class="form-select form-select-sm" aria-label=".form-select-sm example" name="symbol" id="symbol">
+						  <option selected>Open this select menu</option>
+						  <option value="IBM">IBM</option>
+						  <option value="TSCO.LON">Tesco PLC</option>
+						  <option value="RELIANCE.BSE">Reliance</option>
+						  <option value="SHOP.TRT">Shopify</option>
+						  <option value="DAI.DEX">DAIMLER AG</option>
+						</select>
+					</div>
+					<button id="button4" class="btn btn-primary">Predict</button>
+					</form>
+                    <h2>Tomorrow: {{ predict }}</h2>
+					<hr>
+					<form method="POST">
+						<h3>Stock Prediction 2</h3>
+					<div class="mb-3">
+					  <label for="exampleFormControlInput1" class="form-label">Open</label>
+					  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="open">
+					</div>
+					<div class="mb-3">
+					  <label for="exampleFormControlInput1" class="form-label">High</label>
+					  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="high">
+					</div>
+					<div class="mb-3">
+					  <label for="exampleFormControlInput1" class="form-label">Low</label>
+					  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="low">
+					</div>
+					<div class="mb-3">
+					  <label for="exampleFormControlInput1" class="form-label">Volume</label>
+					  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="volume">
+					</div>
+					<button id="button4" class="btn btn-primary">Predict</button>
+					</form>
+				</div>
+{% endblock %}
